@@ -1,0 +1,129 @@
+
+function starBurstAnim(star1,star2) {
+    const elements = [
+        document.getElementById('alternative0'),
+        document.getElementById('alternative1'),
+        document.getElementById('alternative2'),
+        document.getElementById('alternative3'),
+    ];
+    elements.forEach((element, index) => {
+        if (score == index + 1 && element) {
+            gsap.timeline()
+                .fromTo(element, {
+                    scale: 0,
+                    opacity: 1,
+                    filter: "drop-shadow(0 0 0px rgba(255, 215, 0, 0))"
+                }, {
+                    scale: 2.5,
+                    opacity: 1,
+                    duration: .2,
+                    ease: "power2.out",
+                    filter: "drop-shadow(0 0 20px rgba(255, 215, 0, 1))",
+                })
+                .to(element, {
+                    scale: 0.8,
+                    opacity: 1,
+                    duration: 0.4,
+                    ease: "power2.out",
+                    filter: "drop-shadow(0 0 10px rgba(255, 215, 0, 0.8))",
+                })
+                .to(element, {
+                    scale: 1,
+                    duration: 0.4,
+                    ease: "back.out(1.7)",
+                    filter: "drop-shadow(0 0 5px rgba(255, 215, 0, 0.5))",
+                })
+
+            .to(element, {
+                scale: 1,
+                duration: 0.2,
+                ease: "power1.inOut",
+                filter: "none",
+                onComplete: function() {
+                    if (score === 4) {
+                        gameState = 1;
+                        appendProduct();
+                        lauchFireWorks();
+                        gsap.timeline({})
+                            .to(elements, {
+                                scale: 1.5,
+                                opacity: 1,
+                                duration: .5,
+                                ease: "power1.inOut",
+                                filter: "drop-shadow(0 0 10px rgba(255, 215, 0, 1))",
+                                stagger: 0.15 // Stagger the start time of each element's animation
+                            })
+                            .to(elements, {
+                                scale: 1,
+                                duration: .3,
+                                ease: "power1.inOut",
+                                filter: "none",
+                                stagger: 0.1, 
+                            });
+                    }
+
+                }
+            });
+        }
+        else if (score == index - 1 && element){
+            gsap.timeline()
+            .to(element, {
+                opacity: 0,
+                duration: 0.4,
+            })
+        }
+    });
+}
+function brokenStarAnim(star, product, holeID) {
+    let img = product.querySelector('.img');
+    animRemoveProd(holeID, product, img);
+    let brokenHeartTimeline = gsap.timeline();
+    brokenHeartTimeline
+        .to(brockenStar1, {
+            opacity: 1,
+            left: -4,
+            scale: 2,
+            duration: 0.2,
+        }, 0)
+        .to(brockenStar1, {
+            duration: 0.2,
+            ease: "power2.out"
+        })
+        .to(brockenStar2, {
+            opacity: 1,
+            left: 4,
+            scale: 2,
+            duration: 0.2,
+        }, 0)
+        .to([brockenStar2], {
+            duration: 0.2,
+            ease: "power2.out"
+        })
+        .to(brockenStar1, {
+            x: -30, // Move left
+            y: -10, // Slight upward movement for bounce effect
+            rotation: -15, // Add rotation
+            duration: 0.3,
+            ease: "power2.out"
+        }, "-=0.1") // Overlap slightly with the previous tween
+        .to(brockenStar2, {
+            x: 30, // Move right
+            y: -10, // Slight upward movement for bounce effect
+            rotation: 15, // Add rotation
+            duration: 0.3,
+            ease: "power2.out"
+        }, "-=0.3") // Overlap slightly with the previous tween
+        .to([brockenStar1, brockenStar2], {
+            x: (i) => i === 0 ? -60 : 60, // Further move left/right
+            y: 50, // Move down
+            rotation: (i) => i === 0 ? -30 : 30, // Continue rotating
+            opacity: 0,
+            duration: 1,
+            ease: "power2.in",
+            onComplete: function() {}
+        });
+}
+
+
+<img src="/images/broken star one.png" alt="" class="brokenstar brokenstar1">
+                <img src="/images/broken star 2.png" alt="" class="brokenstar brokenstar2">

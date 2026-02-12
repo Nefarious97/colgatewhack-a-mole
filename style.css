@@ -1,0 +1,549 @@
+.main {
+  width: 300px;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.mBG {
+  position: absolute;
+  inset: 0;
+}
+
+.bgImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(2, 83px);
+  grid-gap: 19px;
+  position: absolute;
+  top: 361px;
+  left: 60px;
+}
+
+.hole {
+  width: 80px;
+  height: 80px;
+  background: url("images/hole.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+  border-radius: 50%;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hole:hover {
+  cursor: pointer;
+}
+
+.product {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+}
+
+.container-prod {
+  border-radius: 50%;
+  height: 80px;
+  -webkit-tap-highlight-color: transparent;
+  width: 80px;
+}
+
+.container-inner {
+  clip-path: path("M 78,80 C 78,100.98682 60.98682,118 40,118 19.01318,118 2,100.98682 2,80 V 2 H 40 78 Z");
+  position: relative;
+  transform-origin: 50%;
+  top: -40px;
+}
+
+.circle {
+  border-radius: 50%;
+  cursor: pointer;
+  height: 80px;
+  left: 0px;
+  pointer-events: none;
+  position: absolute;
+  top: 39px;
+  width: 80px;
+}
+
+.class0 .img {
+  pointer-events: none;
+  position: relative;
+  transform-origin: 50% bottom;
+  left: -10px;
+  width: 103px;
+  top: 110px;
+  transform: rotate(-15deg);
+}
+
+.class1 .img {
+  pointer-events: none;
+  position: relative;
+  left: -10px;
+  top: 90px;
+  width: 103px;
+  transform: rotate(-15deg);
+}
+
+.class2 .img {
+  pointer-events: none;
+  position: relative;
+  transform-origin: 50% bottom;
+  left: -10px;
+  width: 103px;
+  top: 115px;
+  transform: rotate(-15deg);
+}
+
+.class3 .img {
+  pointer-events: none;
+  position: relative;
+  left: -10px;
+  top: 115px;
+  width: 103px;
+  transform: rotate(-15deg);
+}
+
+.score-test {
+  position: absolute;
+  font-size: 100px;
+}
+
+.ratingSys {
+  position: absolute;
+  width: 220px;
+  height: 38px;
+  background: #dd1a1a;
+  top: 286px;
+  left: 40px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.star {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  margin-left: 5px;
+  margin-right: 5px;
+  align-items: center;
+}
+
+.starplaceholder {
+  width: 30px;
+  position: absolute;
+}
+
+.starmain {
+  width: 30px;
+  position: absolute;
+  transform: scale(0);
+  opacity: 0;
+}
+
+.brokenstar {
+  position: absolute;
+  height: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.brokenstar1 {
+  width: 18px;
+  transform-origin: center;
+}
+
+.brokenstar2 {
+  width: 16px;
+  transform-origin: center;
+}
+
+.pwr-hammer {
+  width: 72px;
+}
+
+.productHammer {
+  position: absolute;
+  opacity: 0;
+  transform: translate(320px, 400px) scale(0) rotate(65deg);
+}
+
+.main-text-cont {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 260px;
+}
+
+.main-text {
+  width: 75%;
+}
+
+.bumper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 70px;
+}
+
+.bumper-img {
+  width: 70%;
+}
+
+.sub-text-cont {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 70px;
+}
+
+.sub-text {
+  width: 60%;
+}
+
+/* REQUIRED for JS */
+.bumper-shadow {
+  display: flex;
+  justify-content: center;
+  top: 110px;
+  position: absolute;
+}
+
+.bumper-img-shadow {
+  width: 52%;
+  filter: blur(2px);
+  mix-blend-mode: multiply;
+}
+
+.blurOverlay {
+  position: absolute;
+  width: 248px;
+  height: 254px;
+  top: 330px;
+  left: 27px;
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(4.7px);
+  -webkit-backdrop-filter: blur(4.3px);
+  border-top: 1px solid rgb(255 255 255 / 64%);
+  border-left: 1px solid hsla(0, 0%, 88%, 0.496);
+  border-right: 1px solid rgba(225, 225, 225, 0.516);
+  border-bottom: 1px solid rgb(225 225 225 / 49%);
+}
+
+.playbtn {
+  position: absolute;
+  top: 408px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.playBtnImg {
+  width: 48%;
+}
+
+.instructionsCont {
+  position: absolute;
+  top: 357px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.rulesImg {
+  width: 90px;
+  top: -45px;
+  transform: scale(0);
+  position: relative;
+}
+
+.goodTooth2 {
+  width: 90px;
+  position: absolute;
+  transform: rotate(23deg);
+  top: 31px;
+  filter: drop-shadow(0 0.2rem 0.25rem rgba(92, 92, 92, 0.7));
+  transform: scale(0);
+  left: 77px;
+}
+
+.goodTooth {
+  width: 40px;
+  position: absolute;
+  transform: rotate(-21deg);
+  transform: scale(0);
+  left: 54px;
+}
+
+.goodTxt {
+  width: 67px;
+  position: absolute;
+  transform: scale(0);
+  top: 168px;
+  left: 70px;
+}
+
+.goodIcon {
+  width: 30px;
+  position: absolute;
+  transform: scale(0);
+  top: 128px;
+  left: 87px;
+}
+
+.badTooth {
+  width: 37px;
+  position: absolute;
+  transform: scale(0);
+  left: 197px;
+}
+
+.BadIcon {
+  width: 30px;
+  position: absolute;
+  transform: scale(0);
+  top: 128px;
+  left: 198px;
+}
+
+.BadTxt {
+  width: 50px;
+  position: absolute;
+  top: 171px;
+  left: 193px;
+  transform: scale(0);
+}
+
+.twinkles {
+  position: absolute;
+}
+
+.ps-twinkle1 {
+  width: 100px;
+  top: 48px;
+  position: absolute;
+  left: 32px;
+  mix-blend-mode: hard-light;
+  transform: scale(0);
+}
+
+.heartspark {
+  position: absolute;
+}
+
+.heartSparkImg {
+  width: 274px;
+  mix-blend-mode: screen;
+  top: 17px;
+  position: absolute;
+  left: 11px;
+  opacity: 2.6;
+  display: none;
+}
+
+.confetti-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* PAGE 2 */
+.revP {
+  width: 300px;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+  opacity: 0;
+  display: none;
+}
+
+.carousel {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+}
+
+.carousel div {
+  transform-style: preserve-3d;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 250px;
+  height: 350px;
+  line-height: 200px;
+  font-size: 5em;
+  text-align: center;
+  color: #FFF;
+  opacity: ;
+  border-radius: 10px;
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+.c .item {
+  align-items: center;
+}
+
+.a {
+  transform: rotateY(0deg) translateZ(250px);
+}
+
+.a .item {
+  display: flex;
+  justify-content: center;
+}
+
+.b {
+  transform: rotateY(120deg) translateZ(250px) rotateY(-120deg);
+}
+
+.b .item {
+  display: flex;
+  justify-content: center;
+}
+
+.c {
+  transform: rotateY(240deg) translateZ(250px) rotateY(-240deg);
+}
+
+.c .item {
+  display: flex;
+  justify-content: center;
+}
+
+.back-item {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.center-item {
+  z-index: 9;
+}
+
+.bkdrp-rev-img {
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  width: 250px;
+  height: 600px;
+  position: absolute;
+  perspective: 650px;
+  top: 147px;
+  transform: scale(0.44);
+  left: 24px;
+}
+
+.item7 {
+  display: none;
+  position: absolute;
+  width: 350px;
+  height: 300px;
+  line-height: 200px;
+  font-size: 5em;
+  text-align: center;
+  color: #FFF;
+  opacity: 1;
+  border-radius: 10px;
+  transition: transform 1s;
+  transform-origin: center;
+  left: -45px;
+}
+
+.k .item7 {
+  display: none;
+  justify-content: center;
+}
+
+.learn-more-rev-img {
+  width: 100%;
+}
+
+.learn-more-rev {
+  position: absolute;
+  top: 536px;
+  cursor: pointer;
+  width: 44%;
+  left: 87px;
+}
+
+.learn-more-rev:hover {
+  transform: scale(1.2);
+}
+
+.txt2Img {
+  width: 60%;
+}
+
+.txt3Img {
+  width: 50%;
+}
+
+.txt2 {
+  font-size: 23px;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.txt3 {
+  font-size: 45px;
+  color: white;
+}
+
+.colgate-rev-text span {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(20px) rotate(-15deg) scale(0.5);
+}
+
+.maintextRevUse {
+  position: absolute;
+  top: 173px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.grabbing {
+  cursor: move;
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.item3-img {
+  height: 79%;
+}

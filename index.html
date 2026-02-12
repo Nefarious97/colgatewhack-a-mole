@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colgate Game</title>
+
+  <!-- Use RELATIVE paths if you run from a folder locally -->
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="js/confetti.browser.min.js"></script>
+  <script src="js/gsap.min.js"></script>
+</head>
+<body>
+
+  <div class="main">
+
+    <!-- BG -->
+    <div class="mBG">
+      <img src="images/First bg.jpg" alt="" class="bgImg">
+    </div>
+
+    <!-- Twinkles / spark -->
+    <div class="twinkles"></div>
+    <div class="twinkles">
+      <img src="images/ps-twinkle.png" alt="" class="ps-twinkle1">
+    </div>
+
+    <div class="heartspark">
+      <img class="heartSparkImg" src="images/heart spark-ps.png" alt="">
+    </div>
+
+    <!-- Bumper -->
+    <div class="bumper">
+      <img src="images/firstteeth.png" alt="" class="bumper-img">
+    </div>
+
+    <!-- REQUIRED by JS -->
+    <div class="bumper-shadow">
+      <img src="images/firstteeth.png" alt="" class="bumper-img-shadow">
+    </div>
+
+    <!-- Main + Sub text -->
+    <div class="main-text-cont">
+      <img src="images/Catch the healthy Tooth.png" alt="" class="main-text">
+    </div>
+
+    <!-- Rating -->
+    <div class="ratingSys">
+      <div class="star" id="star0">
+        <img src="images/red star1.png" alt="" class="starplaceholder">
+      </div>
+      <div class="star" id="star1">
+        <img src="images/red star1.png" alt="" class="starplaceholder">
+      </div>
+      <div class="star" id="star2">
+        <img src="images/red star1.png" alt="" class="starplaceholder">
+      </div>
+      <div class="star" id="star3">
+        <img src="images/red star1.png" alt="" class="starplaceholder">
+      </div>
+    </div>
+
+    <!-- Game grid -->
+    <div class="game-container">
+      <div class="hole" id="hole0"></div>
+      <div class="hole" id="hole1"></div>
+      <div class="hole" id="hole2"></div>
+      <div class="hole" id="hole3"></div>
+    </div>
+
+    <!-- Hammer -->
+    <div class="productHammer">
+      <img src="images/Colgate hammer.png" class="pwr-hammer" alt="">
+    </div>
+
+    <!-- Blur -->
+    <div class="wrapper">
+      <div class="blurOverlay"></div>
+    </div>
+
+    <!-- Play -->
+    <div class="playbtn">
+      <img src="images/playy.png" class="playBtnImg" alt="">
+    </div>
+
+    <!-- Instructions -->
+    <div class="instructionsCont">
+      <div class="rules-txt">
+        <img src="images/Rules.png" alt="" class="rulesImg">
+      </div>
+
+      <div class="goodCont">
+        <img src="images/tooth.png" alt="" class="goodTooth">
+        <img src="images/tooth.png" alt="" class="goodTooth2">
+        <img src="images/right mark.png" alt="" class="goodIcon">
+        <img src="images/Goodt.png" alt="" class="goodTxt">
+      </div>
+
+      <div class="badCont">
+        <img src="images/dirty tooth.png" alt="" class="badTooth">
+        <img src="images/wrong-mark.png" alt="" class="BadIcon">
+        <img src="images/Badt.png" alt="" class="BadTxt">
+      </div>
+    </div>
+
+    <!-- Confetti -->
+    <div class="confetti-container" id="confetti-container">
+      <canvas id="confetti-canvas"></canvas>
+    </div>
+
+    <!-- REVEAL PAGE -->
+    <div class="revP">
+      <div class="bkdrp-rev">
+        <img src="images/Colgate reveal copy.jpg" class="bkdrp-rev-img" alt="">
+      </div>
+
+      <div class="maintextRevUse">
+        <span class="txt2">
+          <img src="images/Use  colgate.png" alt="" class="txt2Img">
+        </span>
+      </div>
+
+      <!-- Colgate logo (fixed visibility + animated in JS) -->
+      <div class="colgate-rev-text">
+        <img src="images/colgate.png" alt="" class="txt3Img colgateLogo">
+      </div>
+
+      <div class="container">
+        <div class="carousel">
+          <div class="a">
+            <div class="item"><img src="images/product1.png" alt="" class="item1-img"></div>
+          </div>
+          <div class="b">
+            <div class="item"><img src="images/product2.png" alt="" class="item2-img"></div>
+          </div>
+          <div class="c">
+            <div class="item"><img src="images/product3.png" alt="" class="item3-img"></div>
+          </div>
+          <div class="k">
+            <div class="item7"><img src="images/firstteeth.png" alt="" class="item7-img"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="learn-more-rev">
+        <img src="images/Learn More.png" class="learn-more-rev-img" alt="">
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
